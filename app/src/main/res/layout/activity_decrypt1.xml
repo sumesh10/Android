@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".decrypt1">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/wave2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="276dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView"
+            android:layout_alignEnd="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="327dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="372dp"
+            android:text="Enter the key:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="83dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="234dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="-23dp"
+            android:layout_marginBottom="635dp"
+            android:fontFamily="@font/aclonica"
+            android:text="Ceasar\nCipher"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="276dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="197dp"
+            android:layout_marginEnd="85dp"
+            android:layout_marginBottom="502dp"
+            android:text="Enter the text to be decrypted:"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView"
+            android:layout_alignEnd="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="234dp"
+            android:layout_marginEnd="-42dp"
+            android:layout_marginBottom="452dp"
+            android:ems="10"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView3"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_alignEnd="@+id/textView3"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="363dp"
+            android:layout_marginEnd="-47dp"
+            android:layout_marginBottom="323dp"
+            android:ems="10"
+            android:inputType="text"
+            />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="283dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/et1"
+            android:layout_alignEnd="@+id/et1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="539dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="147dp"
+            android:ems="10"
+            android:inputType="text"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_alignStart="@+id/result"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-9dp"
+            android:layout_marginTop="630dp"
+            android:layout_marginEnd="259dp"
+            android:layout_marginBottom="67dp"
+            android:elevation="13dp"
+            android:onClick="goback"
+            android:text="back"
+            app:iconTint="#0099FF" />
+
+        <Button
+            android:id="@+id/get"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_alignStart="@+id/et2"
+            android:layout_alignEnd="@+id/et2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="69dp"
+            android:layout_marginTop="458dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="231dp"
+            android:onClick="getResult"
+            android:text="Decryt" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

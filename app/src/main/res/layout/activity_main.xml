@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/wave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="181dp"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="642dp"
+            android:fontFamily="@font/aclonica"
+            android:text="WELCOME"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/c1"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="239dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="409dp"
+            android:onClick="ceasar"
+            app:cardCornerRadius="11dp"
+            app:cardElevation="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/acme"
+                android:text="Ceasar Cipher"
+                android:textAlignment="center"
+                android:textSize="30sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/c2"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="363dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="285dp"
+            app:cardCornerRadius="11dp"
+            app:cardElevation="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/acme"
+                android:text="Playfair Cipher"
+                android:textAlignment="center"
+                android:textSize="30sp" />
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
