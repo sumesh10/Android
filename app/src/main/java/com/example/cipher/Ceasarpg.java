@@ -16,39 +16,16 @@ public class Ceasarpg extends AppCompatActivity {
         setContentView(R.layout.activity_ceasarpg);
     }
     public void back(View v){
-        Button b;
-        CardView cardView;
-        cardView=(CardView)findViewById(R.id.c1);
-        b=(Button) findViewById(R.id.back);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(Ceasarpg.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        Intent intent=new Intent(Ceasarpg.this,MainActivity.class);
+        startActivity(intent);
     }
     public void gotoencrypt(View v){
-        CardView cardView;
-        cardView=(CardView)findViewById(R.id.c1);
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(Ceasarpg.this,encrypt1.class);
-                startActivity(intent);
-            }
-        });
+        Intent intent=new Intent(Ceasarpg.this,encrypt1.class);
+        startActivity(intent);
 
     }
     public void gotodecrypt(View v){
-        CardView cardView;
-        cardView=(CardView)findViewById(R.id.c2);
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(Ceasarpg.this,decrypt1.class);
-                startActivity(intent);
-            }
-        });
+        Intent intent=new Intent(Ceasarpg.this,decrypt1.class);
+        startActivity(intent);
     }
 }

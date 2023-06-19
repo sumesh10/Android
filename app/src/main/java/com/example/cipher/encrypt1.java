@@ -38,17 +38,9 @@ public class encrypt1 extends AppCompatActivity {
 
     }
     public void goback(View v){
-        Button b;
-        CardView cardView;
-        cardView=(CardView)findViewById(R.id.c1);
-        b=(Button) findViewById(R.id.back);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(encrypt1.this,Ceasarpg.class);
-                startActivity(intent);
-            }
-        });
+        Intent intent=new Intent(encrypt1.this,Ceasarpg.class);
+        startActivity(intent);
+
     }
     public void getResult(View v){
         Button result;
@@ -60,28 +52,22 @@ public class encrypt1 extends AppCompatActivity {
         val.setText("");
         String str=e1.getText().toString().toLowerCase();
         int key=Integer.parseInt(e2.getText().toString().trim());
-        result=(Button) findViewById(R.id.get);
-        result.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String res= "";
-                int i,pos,charpos;
-                char c;
-                for(i=0;i<str.length();i++){
-                    char ch=' ';
-                    if(str.charAt(i)==' '){
-                        res=res+' ';
-                        continue;
-                    }
-                    pos=alpha.indexOf(str.charAt(i));
-                    charpos=(key+pos)%26;
-                    c=alpha.charAt(charpos);
-                    res=res+c;
-                }
-                val.setText("Cipher text:"+res);
-
+        String res= "";
+        int i,pos,charpos;
+        char c;
+        for(i=0;i<str.length();i++){
+            char ch=' ';
+            if(str.charAt(i)==' '){
+                res=res+' ';
+                continue;
             }
-        });
+            pos=alpha.indexOf(str.charAt(i));
+            charpos=(key+pos)%26;
+            c=alpha.charAt(charpos);
+            res=res+c;
+        }
+        val.setText("Cipher text:"+res);
+
     }
 
 }

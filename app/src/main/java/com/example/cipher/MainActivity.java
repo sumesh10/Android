@@ -16,15 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void ceasar(View v){
-        CardView c;
-        c=(CardView) findViewById(R.id.c1);
-        c.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Ceasarpg.class);
-                startActivity(intent);
-
-            }
-        });
+        Intent intent = new Intent(MainActivity.this,Ceasarpg.class);
+        startActivity(intent);
     }
 }
