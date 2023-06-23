@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".encrypt1">
-
+    tools:context=".Playencr">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,7 +43,7 @@
             android:layout_marginEnd="-23dp"
             android:layout_marginBottom="635dp"
             android:fontFamily="@font/aclonica"
-            android:text="Ceasar\nCipher"
+            android:text="Playfair\nCipher"
             android:textColor="#FFFFFF"
             android:textSize="32sp" />
 
@@ -126,7 +125,7 @@
             android:layout_marginEnd="259dp"
             android:layout_marginBottom="67dp"
             android:elevation="13dp"
-            android:onClick="goback"
+            android:onClick="onback"
             android:text="back"
             app:iconTint="#0099FF" />
 

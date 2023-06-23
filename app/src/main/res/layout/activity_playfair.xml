@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".Playfair">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/wave"
+        android:background="@drawable/wave2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,20 +17,19 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="83dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="181dp"
-            android:layout_marginTop="43dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="642dp"
+            android:layout_marginStart="234dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="-23dp"
+            android:layout_marginBottom="635dp"
             android:fontFamily="@font/aclonica"
-            android:text="WELCOME"
+            android:text="Playfair\nCipher"
             android:textColor="#FFFFFF"
             android:textSize="32sp" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/c1"
             android:layout_width="323dp"
@@ -44,7 +42,7 @@
             android:layout_marginTop="239dp"
             android:layout_marginEnd="44dp"
             android:layout_marginBottom="409dp"
-            android:onClick="ceasar"
+            android:onClick="onencrypt"
             app:cardCornerRadius="11dp"
             app:cardElevation="16dp">
 
@@ -53,7 +51,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/acme"
-                android:text="Ceasar Cipher"
+                android:text="Encryption"
                 android:textAlignment="center"
                 android:textSize="30sp" />
         </androidx.cardview.widget.CardView>
@@ -70,20 +68,36 @@
             android:layout_marginTop="363dp"
             android:layout_marginEnd="44dp"
             android:layout_marginBottom="285dp"
+            android:onClick="ondecrypt"
             app:cardCornerRadius="11dp"
-            app:cardElevation="16dp"
-            android:onClick="onencrypt">
+            app:cardElevation="16dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
                 android:fontFamily="@font/acme"
-                android:text="Playfair Cipher"
+                android:text="Decrytion"
                 android:textAlignment="center"
                 android:textSize="30sp" />
         </androidx.cardview.widget.CardView>
 
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_alignStart="@+id/c2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-4dp"
+            android:layout_marginTop="622dp"
+            android:layout_marginEnd="260dp"
+            android:layout_marginBottom="67dp"
+            android:elevation="13dp"
+            android:onClick="goback"
+            android:text="back"
+            app:iconTint="#0099FF" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

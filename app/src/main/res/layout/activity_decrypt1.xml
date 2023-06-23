@@ -64,7 +64,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/et1"
+            android:id="@+id/e1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/textView"
@@ -79,7 +79,7 @@
             android:inputType="text" />
 
         <EditText
-            android:id="@+id/et2"
+            android:id="@+id/e2"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView3"
@@ -96,11 +96,11 @@
             />
 
         <TextView
-            android:id="@+id/result"
+            android:id="@+id/res"
             android:layout_width="283dp"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/et1"
-            android:layout_alignEnd="@+id/et1"
+            android:layout_alignStart="@+id/e1"
+            android:layout_alignEnd="@+id/e1"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="-1dp"
@@ -116,7 +116,7 @@
             android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            android:layout_alignStart="@+id/result"
+            android:layout_alignStart="@+id/res"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
@@ -133,8 +133,8 @@
             android:id="@+id/get"
             android:layout_width="wrap_content"
             android:layout_height="42dp"
-            android:layout_alignStart="@+id/et2"
-            android:layout_alignEnd="@+id/et2"
+            android:layout_alignStart="@+id/e2"
+            android:layout_alignEnd="@+id/e2"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="69dp"

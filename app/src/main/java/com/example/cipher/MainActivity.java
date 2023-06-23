@@ -19,4 +19,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this,Ceasarpg.class);
         startActivity(intent);
     }
+    public void onencrypt(View v) {
+        Intent intent = new Intent(MainActivity.this, Playfair.class);
+        startActivity(intent);
+    }
+
+
 }
