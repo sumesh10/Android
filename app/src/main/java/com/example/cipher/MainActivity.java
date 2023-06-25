@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, Playfair.class);
         startActivity(intent);
     }
+    public void onexit(View v){
+        finishAffinity();
+    }
+
 
 
 }
