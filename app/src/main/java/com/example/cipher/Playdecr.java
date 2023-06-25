@@ -9,146 +9,109 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Playdecr extends AppCompatActivity {
-    EditText e1,e2;
+    EditText e1, e2;
     TextView res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playdecr);
-        e1=(EditText) findViewById(R.id.e1);
-        e2=(EditText) findViewById(R.id.e2);
-        res=(TextView) findViewById(R.id.res);
+        e1 = findViewById(R.id.e1);
+        e2 = findViewById(R.id.e2);
+        res = findViewById(R.id.res);
     }
-    public void getResult(View v){
-        String s2=e1.getText().toString();
-        String key=e2.getText().toString();
-        key=key.toUpperCase();
-        String s1="";
-        int i,p=0;
-        for(i=0;i<s2.length();i++){
-            if(s2.charAt(i)==' '){
-                continue;
-            }
-            else{
-                s1=s1+s2.charAt(i);
-            }
-        }
+
+    public void getResult(View v) {
+        String s2 = e1.getText().toString();
+        String key = e2.getText().toString().toUpperCase();
+
+        String s1 = s2.replaceAll(" ", "");
         StringBuilder sb = new StringBuilder(s1);
+
         int originalLength = sb.length();
-        for (i = 0; i < originalLength; i = i + 2) {
-            if (i + 1 >= sb.length()) {
-                break;
-            }
-            if (sb.charAt(i + 1) == '0') {
+        for (int i = 0; i < originalLength; i += 2) {
+            if (i + 1 >= sb.length() || sb.charAt(i + 1) == '0') {
                 break;
             }
             if (sb.charAt(i) == sb.charAt(i + 1)) {
                 sb.insert(i + 1, 'X');
                 originalLength++;
                 if (sb.length() % 2 == 1) {
-                    sb.insert(originalLength, '0');
-                    p++;
+                    sb.append('0');
                 }
             }
         }
-        int len = sb.length() - p;
-        sb.setLength(len);
-        s1 = String.valueOf(sb);
-        if (s1.length() % 2 != 0) {
-            s1 += 'x';
-        }
-        s1=s1.toUpperCase();
-        // System.out.println(s1 + " length is " );
-//        System.out.println(s1);
-        int a,b;
-        int m=5,n=5;
-        char[][] mat=new char[m][n];
 
-        char c='A';
-        int k=0;
-        for(a=0;a<m;a++){
-            for(b=0;b<n;b++){
-                if(k<key.length()){
-                    mat[a][b]=key.charAt(k++);
-                }
-                else{
-                    if(c=='Z'){
+        int len = sb.length() - (sb.length() % 2 == 1 ? 1 : 0);
+        sb.setLength(len);
+        s1 = sb.toString().toUpperCase();
+
+        int m = 5, n = 5;
+        char[][] mat = new char[m][n];
+        char c = 'A';
+        int k = 0;
+
+        for (int a = 0; a < m; a++) {
+            for (int b = 0; b < n; b++) {
+                if (k < key.length()) {
+                    mat[a][b] = key.charAt(k++);
+                } else {
+                    if (c == 'Z') {
                         break;
                     }
-                    if(c=='J')
-                    {
+                    if (c == 'J') {
                         c++;
                     }
-                    while((key.contains(Character.toString(c)))==true){
+                    while (key.contains(Character.toString(c))) {
                         c++;
                     }
-
-                    mat[a][b]=c;
-                    c++;
-
+                    mat[a][b] = c++;
                 }
             }
-
         }
 
-//        for(a=0;a<m;a++) {
-//            for (b = 0; b < n; b++) {
-//                System.out.print(mat[a][b] + " ");
-//
-//            }
-//            System.out.println();
-//        }
-        String encrypted="";
-        for (int l = 0; l < s1.length(); l = l + 2) {
+        StringBuilder encrypted = new StringBuilder();
+        for (int l = 0; l < s1.length(); l += 2) {
             String substr = s1.substring(l, l + 2);
             int el1 = substr.charAt(0);
             int el2 = substr.charAt(1);
             int row1 = 0, col1 = 0, row2 = 0, col2 = 0;
-            System.out.println((char) el1 + " " + (char) el2);
+
             for (int t = 0; t < 5; t++) {
                 for (int u = 0; u < 5; u++) {
                     if (mat[t][u] == el1) {
                         row1 = t;
                         col1 = u;
                     }
-                }
-            }
-            for (int q = 0; q < 5; q++) {
-                for (int w = 0; w < 5; w++) {
-                    if (mat[q][w] == el2) {
-                        row2 = q;
-                        col2 = w;
+                    if (mat[t][u] == el2) {
+                        row2 = t;
+                        col2 = u;
                     }
                 }
             }
-            System.out.println(row1 + "," + col1 + "   " + row2 + "," + col2);
+
             if (row1 == row2) {
-                col1=(col1-1)%5;
-                col2=(col2-1)%5;
+                col1 = (col1 - 1 + 5) % 5;
+                col2 = (col2 - 1 + 5) % 5;
+                encrypted.append(mat[row1][col1]).append(mat[row2][col2]);
+            } else if (col1 == col2) {
+                row1 = (row1 - 1 + 5) % 5;
+                row2 = (row2 - 1 + 5) % 5;
+                encrypted.append(mat[row1][col1]).append(mat[row2][col2]);
+            } else {
+                int temp = col1;
+                col1 = col2;
+                col2 = temp;
+                encrypted.append(mat[row1][col1]).append(mat[row2][col2]);
             }
-            if (col1 == col2) {
-                row1=(row1-1)%5;
-                row2=(row2-1)%5;
-            }
-            else if(row1!=row2 &&col1!=col2){
-                int temp=col1;
-                col1=col2;
-                col2=temp;
-
-
-            }
-            encrypted=encrypted+mat[row1][col1]+mat[row2][col2];
-
-
         }
-        System.out.println(encrypted);
-        encrypted=encrypted.replace("X","");
-        res.setText("Plain text: "+encrypted);
 
+        String result = encrypted.toString().replace("X", "");
+        res.setText("Plain text: " + result);
     }
-    public void onback(View v){
-        Intent intent=new Intent(Playdecr.this,Playfair.class);
+
+    public void onback(View v) {
+        Intent intent = new Intent(Playdecr.this, Playfair.class);
         startActivity(intent);
     }
 }
