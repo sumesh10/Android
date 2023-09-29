@@ -25,6 +25,7 @@ public class Playencr extends AppCompatActivity {
         String s2=e1.getText().toString();
         String key=e2.getText().toString();
         key=key.toUpperCase();
+
         String s1="";
         int i,p=0;
         for(i=0;i<s2.length();i++){
